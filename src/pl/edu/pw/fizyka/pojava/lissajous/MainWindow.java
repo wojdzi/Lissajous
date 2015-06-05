@@ -2,6 +2,7 @@ package pl.edu.pw.fizyka.pojava.lissajous;
 
 /**
  * GUI wykonane przy pomocy Window Buildera dla IDE Eclipse
+ * @author Karolina_GUI
  */
 
 import java.awt.Color;
@@ -33,23 +34,23 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class MainWindow extends JFrame {
 
-	private static final long serialVersionUID = -8502293635697957795L;
 	protected static final Graphics Graphics = null;
 	private JPanel contentPane;
 
-	private int numerfigury = 0;
+	private int figureNumber = 0;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					MainWindow frame = new MainWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					e.printStackTrace(); //diagnoza wyjÄ…tku
 				}
 			}
 		});
@@ -87,12 +88,12 @@ public class MainWindow extends JFrame {
 
 		final JRadioButton rdbtnOneColor = new JRadioButton("jednolity kolor");
 		rdbtnOneColor.setSelected(true);
-		rdbtnOneColor.setVisible(false);
+		rdbtnOneColor.setVisible(false); //aby nie zaburzaÄ‡ spÃ³jnoÅ›ci gui, a usunÄ…Ä‡ radiobuttony
 		final JRadioButton rdbtnGradColor = new JRadioButton("gradient koloru");
 		rdbtnGradColor.setVisible(false);
 
 		final JLabel lblParametryDoWyboru = new JLabel(
-				"Parametry wybierane przez u¿ytkownika:");
+				"Parametry wybierane przez uÅ¼ytkownika:");
 
 		final JSpinner spinnerA = new JSpinner();
 		spinnerA.setValue(1);
@@ -112,7 +113,7 @@ public class MainWindow extends JFrame {
 
 		JButton btnStart = new JButton("START");
 
-		final JButton btnClear = new JButton("Wyczyœæ");
+		final JButton btnClear = new JButton("WyczyÅ›Ä‡");
 
 		final JButton btnInfo = new JButton("Informacje");
 
@@ -441,7 +442,7 @@ public class MainWindow extends JFrame {
 										.addContainerGap()));
 
 		/**
-		 * Dodaje panel z figurami do okna g³ównego
+		 * Dodaje panel z figurami do okna gÅ‚Ã³wnego
 		 */
 
 		final pl.edu.pw.fizyka.pojava.lissajous.Lissajous panel_1 = new pl.edu.pw.fizyka.pojava.lissajous.Lissajous();
@@ -462,6 +463,7 @@ public class MainWindow extends JFrame {
 		 * 
 		 */
 		btnAnimate.addActionListener(new ActionListener() {
+			@Override //Karolina
 			public void actionPerformed(ActionEvent e) {
 				AnimationWindow animateWindow = new AnimationWindow();
 				animateWindow.setVisible(true);
@@ -470,6 +472,7 @@ public class MainWindow extends JFrame {
 		});
 
 		btnInfo.addActionListener(new ActionListener() {
+			@Override //Karolina
 			public void actionPerformed(ActionEvent e) {
 				InfoFrame info = new InfoFrame();
 				info.setVisible(true);
@@ -481,6 +484,7 @@ public class MainWindow extends JFrame {
 		 */
 
 		ActionListener clear = new ActionListener() {
+			@Override //Karolina i Wojtek
 			public void actionPerformed(ActionEvent e) {
 				panel_1.setValues(0, 0, redSlider.getValue(),
 						blueSlider.getValue(), greenSlider.getValue(),
@@ -492,12 +496,13 @@ public class MainWindow extends JFrame {
 				spinnerA.setValue(0);
 				spinnerB.setValue(0);
 				spinnerD.setValue(0);
-				numerfigury = 0;
+				figureNumber = 0;
 			}
 		};
 		btnClear.addActionListener(clear);
 
 		ActionListener figure3 = new ActionListener() {
+			@Override //Karolina i Wojtek
 			public void actionPerformed(ActionEvent e) {
 
 				panel_1.setValues(1, 2, redSlider.getValue(),
@@ -508,12 +513,13 @@ public class MainWindow extends JFrame {
 				spinnerA.setValue(1);
 				spinnerB.setValue(1);
 				spinnerD.setValue(0);
-				numerfigury = 3;
+				figureNumber = 3;
 			}
 		};
 		btnFigure3.addActionListener(figure3);
 
 		ActionListener figure2 = new ActionListener() {
+			@Override //Karolina i Wojtek
 			public void actionPerformed(ActionEvent e) {
 				panel_1.setValues(2, 3, redSlider.getValue(),
 						blueSlider.getValue(), greenSlider.getValue(), 1, 1, 0);
@@ -523,12 +529,13 @@ public class MainWindow extends JFrame {
 				spinnerA.setValue(1);
 				spinnerB.setValue(1);
 				spinnerD.setValue(0);
-				numerfigury = 2;
+				figureNumber = 2;
 			}
 		};
 		btnFigure2.addActionListener(figure2);
 
 		ActionListener figure1 = new ActionListener() {
+			@Override //Karolina i Wojtek
 			public void actionPerformed(ActionEvent e) {
 				panel_1.setValues(3, 4, redSlider.getValue(),
 						blueSlider.getValue(), greenSlider.getValue(), 1, 1, 0);
@@ -538,11 +545,12 @@ public class MainWindow extends JFrame {
 				spinnerA.setValue(1);
 				spinnerB.setValue(1);
 				spinnerD.setValue(0);
-				numerfigury = 1;
+				figureNumber = 1;
 			}
 		};
 		btnFigure1.addActionListener(figure1);
 		btnStart.addActionListener(new ActionListener() {
+			@Override //Wojtek
 			public void actionPerformed(ActionEvent e) {
 				int A = (int) spinnerA.getValue();
 				int B = (int) spinnerB.getValue();
@@ -552,12 +560,12 @@ public class MainWindow extends JFrame {
 				panel_1.setValues(a, b, redSlider.getValue(),
 						blueSlider.getValue(), greenSlider.getValue(), A, B, d);
 				panel_1.repaint();
-				numerfigury = 4;
+				figureNumber = 4;
 			}
 		});
 
 		btnSave.addActionListener(new ActionListener() {
-			@Override
+			@Override //Wojtek
 			public void actionPerformed(ActionEvent e) {
 
 				BufferedImage image = new BufferedImage(panel_1.getWidth(),
@@ -573,7 +581,7 @@ public class MainWindow extends JFrame {
 				if (result == JFileChooser.APPROVE_OPTION) {
 					File saveFile = filechooser.getSelectedFile();
 					try {
-						ImageIO.write(image, "png", saveFile);
+						ImageIO.write(image, "jpg", saveFile);
 					} catch (Exception ex) {
 						ex.printStackTrace();
 					}
@@ -582,6 +590,7 @@ public class MainWindow extends JFrame {
 		});
 
 		ActionListener angielski = new ActionListener() {
+			@Override //Wojtek
 			public void actionPerformed(ActionEvent e) {
 				if (btnEnglish.getText() == "English") {
 					lblCzerwony.setText("Red");
@@ -594,7 +603,7 @@ public class MainWindow extends JFrame {
 					rdbtnOneColor.setText("Plain Color");
 					rdbtnGradColor.setText("Gradient Color");
 					btnClear.setText("Clear");
-					btnInfo.setText("Informations");
+					btnInfo.setText("Information");
 					btnAnimate.setText("Animation");
 					btnSave.setText("Save");
 					lblParametryDoWyboru
@@ -609,25 +618,25 @@ public class MainWindow extends JFrame {
 					btnFigure3.setText("Figura 3");
 					rdbtnOneColor.setText("Jednolity Kolor");
 					rdbtnGradColor.setText("Gradient Koloru");
-					btnClear.setText("Wyczyœæ");
+					btnClear.setText("WyczyÅ›Ä‡");
 					btnInfo.setText("Informacje");
 					btnAnimate.setText("Animacja");
 					btnSave.setText("Zapisz");
 					lblParametryDoWyboru
-							.setText("Parametry wybierane przez u¿ytkownika:");
+							.setText("Parametry wybierane przez uÅ¼ytkownika:");
 				}
 			}
 		};
 		btnEnglish.addActionListener(angielski);
 		/**
-		 * change listenery do kolorï¿½w
+		 * change listenery do kolorÃ³w
 		 */
 
 		ChangeListener slideRed = new ChangeListener() {
-			@Override
+			@Override //Wojtek
 			public void stateChanged(ChangeEvent e) {
 				revalidate();
-				switch (numerfigury) {
+				switch (figureNumber) {
 				case 0:
 					panel_1.setValues(0, 0, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),
@@ -667,10 +676,10 @@ public class MainWindow extends JFrame {
 		redSlider.addChangeListener(slideRed);
 
 		ChangeListener slideGreen = new ChangeListener() {
-			@Override
+			@Override //Wojtek
 			public void stateChanged(ChangeEvent e) {
 				revalidate();
-				switch (numerfigury) {
+				switch (figureNumber) {
 				case 0:
 					panel_1.setValues(0, 0, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),
@@ -710,10 +719,10 @@ public class MainWindow extends JFrame {
 
 		ChangeListener slideBlue = new ChangeListener() {
 
-			@Override
+			@Override //Wojtek
 			public void stateChanged(ChangeEvent e) {
 				revalidate();
-				switch (numerfigury) {
+				switch (figureNumber) {
 				case 0:
 					panel_1.setValues(0, 0, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),

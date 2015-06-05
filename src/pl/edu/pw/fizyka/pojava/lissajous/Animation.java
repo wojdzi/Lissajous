@@ -27,7 +27,7 @@ public class Animation extends JPanel implements Runnable {
 		super();
 	}
 
-	// @Override
+	// @Override //Wojtek
 	public void paintComponent(Graphics gr) {
 		Graphics2D g = (Graphics2D) gr;
 		g.setColor(Color.white);
@@ -64,11 +64,6 @@ public class Animation extends JPanel implements Runnable {
 		while (thread != null) {
 			try {
 				Thread.sleep(50);
-
-				while (thread_suspended) // Tu sie odbywa pauzowanie
-				{
-					Thread.sleep(10);
-				}
 
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block

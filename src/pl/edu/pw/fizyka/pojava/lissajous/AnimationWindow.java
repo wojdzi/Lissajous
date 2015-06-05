@@ -10,13 +10,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * 
  * @author Kara
+ *
  */
 
 public class AnimationWindow extends JFrame {
-
-	private static final long serialVersionUID = -796465131835138251L;
 	Animation panel;
 	JPanel buttons;
 	JButton start, stop, pauza;
@@ -53,19 +51,6 @@ public class AnimationWindow extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			panel.stop();
-		}
-	}
-
-	class PauseResumeAction implements ActionListener {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if (!(panel.thread_suspended)) {
-				panel.thread_suspended = true;
-				pauza.setText("Wznowienie");
-			} else {
-				panel.thread_suspended = false;
-				pauza.setText("Pauza");
-			}
 		}
 	}
 
