@@ -38,6 +38,7 @@ public class MainWindow extends JFrame {
 	private JPanel contentPane;
 
 	private int numerfigury = 0;
+	private boolean eng = false;
 
 	/**
 	 * Launch the application.
@@ -471,7 +472,7 @@ public class MainWindow extends JFrame {
 
 		btnInfo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InfoFrame info = new InfoFrame();
+				InfoFrame info = new InfoFrame(eng);
 				info.setVisible(true);
 
 			}
@@ -595,6 +596,7 @@ public class MainWindow extends JFrame {
 					rdbtnGradColor.setText("Gradient Color");
 					btnClear.setText("Clear");
 					btnInfo.setText("Informations");
+					eng = true;
 					btnAnimate.setText("Animation");
 					btnSave.setText("Save");
 					lblParametryDoWyboru
@@ -611,6 +613,7 @@ public class MainWindow extends JFrame {
 					rdbtnGradColor.setText("Gradient Koloru");
 					btnClear.setText("Wyczyœæ");
 					btnInfo.setText("Informacje");
+					eng = false;
 					btnAnimate.setText("Animacja");
 					btnSave.setText("Zapisz");
 					lblParametryDoWyboru

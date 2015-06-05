@@ -8,7 +8,7 @@ package pl.edu.pw.fizyka.pojava.lissajous;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
-import java.io.IOException;
+
 
 import javax.swing.*;
 
@@ -19,7 +19,7 @@ public class InfoFrame extends JFrame {
 	// InfoPanel1 infopanel //czytanie z pliku
 	InfoPanel infopanel; // czytanie z wewnatrz paczki
 
-	public InfoFrame() throws HeadlessException {
+	public InfoFrame(boolean eng) throws HeadlessException {
 		super("Informacje");
 
 		this.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -28,7 +28,7 @@ public class InfoFrame extends JFrame {
 		this.setLayout(new BorderLayout());
 
 		// infopanel = new InfoPanel();
-		infopanel = new InfoPanel();
+		infopanel = new InfoPanel(eng);
 		this.getContentPane().add(infopanel, BorderLayout.CENTER);
 
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -36,9 +36,6 @@ public class InfoFrame extends JFrame {
 		setVisible(true);
 	}
 
-	public static void main(String[] args) throws IOException {
-		InfoFrame infoWindow = new InfoFrame();
-		infoWindow.setVisible(true);
-	}
+
 
 }
