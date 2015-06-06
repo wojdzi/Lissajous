@@ -15,9 +15,8 @@ import javax.swing.*;
 public class InfoFrame extends JFrame {
 
 	private static final long serialVersionUID = 6299828070585088298L;
-	// private ImageIcon info;
-	// InfoPanel1 infopanel //czytanie z pliku
-	InfoPanel infopanel; // czytanie z wewnatrz paczki
+
+	InfoPanel infopanel; 
 
 	public InfoFrame(boolean eng) throws HeadlessException {
 		super("Informacje");
@@ -27,7 +26,7 @@ public class InfoFrame extends JFrame {
 		this.setMaximumSize(new Dimension(700, 690));
 		this.setLayout(new BorderLayout());
 
-		// infopanel = new InfoPanel();
+
 		infopanel = new InfoPanel(eng);
 		this.getContentPane().add(infopanel, BorderLayout.CENTER);
 

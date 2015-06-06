@@ -37,7 +37,7 @@ public class MainWindow extends JFrame {
 	protected static final Graphics Graphics = null;
 	private JPanel contentPane;
 
-	private int numerfigury = 0;
+	private int figureNumber = 0;
 	private boolean eng = false;
 
 	/**
@@ -459,8 +459,7 @@ public class MainWindow extends JFrame {
 		contentPane.setLayout(gl_contentPane);
 
 		/**
-		 * nowe okna
-		 * 
+		 * nowe okna Karolina
 		 */
 		btnAnimate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -478,7 +477,7 @@ public class MainWindow extends JFrame {
 			}
 		});
 		/**
-		 * action listenery figur i czyszczenie
+		 * action listenery figur i czyszczenie Karolina
 		 */
 
 		ActionListener clear = new ActionListener() {
@@ -493,7 +492,7 @@ public class MainWindow extends JFrame {
 				spinnerA.setValue(0);
 				spinnerB.setValue(0);
 				spinnerD.setValue(0);
-				numerfigury = 0;
+				figureNumber = 0;
 			}
 		};
 		btnClear.addActionListener(clear);
@@ -509,7 +508,7 @@ public class MainWindow extends JFrame {
 				spinnerA.setValue(1);
 				spinnerB.setValue(1);
 				spinnerD.setValue(0);
-				numerfigury = 3;
+				figureNumber = 3;
 			}
 		};
 		btnFigure3.addActionListener(figure3);
@@ -524,7 +523,7 @@ public class MainWindow extends JFrame {
 				spinnerA.setValue(1);
 				spinnerB.setValue(1);
 				spinnerD.setValue(0);
-				numerfigury = 2;
+				figureNumber = 2;
 			}
 		};
 		btnFigure2.addActionListener(figure2);
@@ -539,10 +538,10 @@ public class MainWindow extends JFrame {
 				spinnerA.setValue(1);
 				spinnerB.setValue(1);
 				spinnerD.setValue(0);
-				numerfigury = 1;
+				figureNumber = 1;
 			}
 		};
-		btnFigure1.addActionListener(figure1);
+		btnFigure1.addActionListener(figure1); // Wojtek
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int A = (int) spinnerA.getValue();
@@ -553,11 +552,11 @@ public class MainWindow extends JFrame {
 				panel_1.setValues(a, b, redSlider.getValue(),
 						blueSlider.getValue(), greenSlider.getValue(), A, B, d);
 				panel_1.repaint();
-				numerfigury = 4;
+				figureNumber = 4;
 			}
 		});
 
-		btnSave.addActionListener(new ActionListener() {
+		btnSave.addActionListener(new ActionListener() { // Wojtek
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
@@ -582,7 +581,7 @@ public class MainWindow extends JFrame {
 			}
 		});
 
-		ActionListener angielski = new ActionListener() {
+		ActionListener angielski = new ActionListener() { // Wojtek
 			public void actionPerformed(ActionEvent e) {
 				if (btnEnglish.getText() == "English") {
 					lblCzerwony.setText("Red");
@@ -595,7 +594,7 @@ public class MainWindow extends JFrame {
 					rdbtnOneColor.setText("Plain Color");
 					rdbtnGradColor.setText("Gradient Color");
 					btnClear.setText("Clear");
-					btnInfo.setText("Informations");
+					btnInfo.setText("Information");
 					eng = true;
 					btnAnimate.setText("Animation");
 					btnSave.setText("Save");
@@ -623,14 +622,14 @@ public class MainWindow extends JFrame {
 		};
 		btnEnglish.addActionListener(angielski);
 		/**
-		 * change listenery do kolor�w
+		 * change listenery do kolor�w Wojtek
 		 */
 
 		ChangeListener slideRed = new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				revalidate();
-				switch (numerfigury) {
+				switch (figureNumber) {
 				case 0:
 					panel_1.setValues(0, 0, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),
@@ -673,7 +672,7 @@ public class MainWindow extends JFrame {
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				revalidate();
-				switch (numerfigury) {
+				switch (figureNumber) {
 				case 0:
 					panel_1.setValues(0, 0, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),
@@ -716,7 +715,7 @@ public class MainWindow extends JFrame {
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				revalidate();
-				switch (numerfigury) {
+				switch (figureNumber) {
 				case 0:
 					panel_1.setValues(0, 0, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),

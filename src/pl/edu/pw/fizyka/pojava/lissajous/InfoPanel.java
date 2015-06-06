@@ -22,33 +22,23 @@ public class InfoPanel extends JPanel {
 	int panelHeight;
 
 	public InfoPanel(boolean eng) {
-		
+
 		try {
-			if(eng == false){
-			packedImage = ImageIO.read(this.getClass().getResourceAsStream(
-					"info.png"));
-			}
-			else{
+			if (eng == false) {
+				packedImage = ImageIO.read(this.getClass().getResourceAsStream(
+						"info.png"));
+			} else {
 				packedImage = ImageIO.read(this.getClass().getResourceAsStream(
 						"info2.png"));
 			}
-			
-			/*
-			 * Linia powyzej jest najwazniejsza. W tym momencie plik info.png
-			 * znajduje sie w katalogu glownym paczki. Jesli zostanie
-			 * przeniesiony do jakiegos podfolderu, trzeba bedzie mu oczywiscie
-			 * zmienic takze sciezke.
-			 */
 
 		} catch (IOException e) {
 			System.err.println("Blad odczytu obrazka");
 			e.printStackTrace();
 		}
 
-		panelWidth = packedImage.getWidth() + 5; // dobrze, zeby byly jeszcze
-													// jakies marginesy
-		panelHeight = packedImage.getHeight() + 5; // po bokach i na gorze/dole
-													// okna
+		panelWidth = packedImage.getWidth() + 5;
+		panelHeight = packedImage.getHeight() + 5;
 		Dimension dimension = new Dimension(panelWidth, panelHeight);
 		setPreferredSize(dimension);
 	}
@@ -56,7 +46,6 @@ public class InfoPanel extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
-		// narysowanie obrazu z dysku
 		g2d.drawImage(packedImage, 0, 0, this);
 	}
 

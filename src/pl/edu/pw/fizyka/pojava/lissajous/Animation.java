@@ -13,7 +13,7 @@ import javax.swing.JPanel;
  */
 
 public class Animation extends JPanel implements Runnable {
-	
+
 	private static final long serialVersionUID = -1035237221865682731L;
 	public Thread thread;
 	public boolean thread_suspended;
@@ -27,8 +27,8 @@ public class Animation extends JPanel implements Runnable {
 		super();
 	}
 
-	// @Override //Wojtek
-	public void paintComponent(Graphics gr) {
+	// @Override
+	public void paintComponent(Graphics gr) { // Karolina
 		Graphics2D g = (Graphics2D) gr;
 		g.setColor(Color.white);
 		g.fillRect(0, 0, getSize().width, getSize().height);
@@ -37,6 +37,8 @@ public class Animation extends JPanel implements Runnable {
 		int xPosition = (int) (xx * getWidth()) / 2 + getWidth() / 2 - (int) r;
 		int yPosition = (int) (yy * getHeight()) / 2 + getHeight() / 2
 				- (int) r;
+
+		// Wojtek
 		g.fillOval(xPosition, yPosition, (int) r * 2, (int) r * 2);
 		curve1_x.add(xPosition + (int) r);
 		curve1_y.add(yPosition + (int) r);
@@ -46,15 +48,12 @@ public class Animation extends JPanel implements Runnable {
 					curve1_y.get(j - 1));
 		}
 
-		
 	}
 
 	void ovalMovement() {
 
 		xx = Math.sin(Math.toDegrees(3 * 2 * Math.PI * i / 25000));
 		yy = Math.sin(Math.toDegrees(4 * 2 * Math.PI * i / 25000));
-
-		
 
 	}
 
@@ -76,8 +75,7 @@ public class Animation extends JPanel implements Runnable {
 	}
 
 	public void start() {
-		// Wznawianie watku to tworzenie nowego obiektu klasy Thread dla obiektu
-		// z interfejsem Runnable czyli w tym przypadku dla panelu
+
 		if (thread == null) {
 			thread = new Thread(this);
 			thread.start();
@@ -86,7 +84,7 @@ public class Animation extends JPanel implements Runnable {
 	}
 
 	public void stop() {
-		// Zatrzymywanie watku to przypisywanie mu nulla.
+		// Zatrzymywanie watku to przypisywanie mu nulla
 		if (thread != null)
 			thread = null;
 	}
