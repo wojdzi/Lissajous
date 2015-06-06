@@ -556,7 +556,10 @@ public class MainWindow extends JFrame {
 			}
 		});
 
-		btnSave.addActionListener(new ActionListener() { // Wojtek
+		/**
+		 * Zapis do pliku i zmiana języka Wojtek
+		 */
+		btnSave.addActionListener(new ActionListener() { 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
