@@ -93,7 +93,7 @@ public class MainWindow extends JFrame {
 		rdbtnGradColor.setVisible(false);
 
 		final JLabel lblParametryDoWyboru = new JLabel(
-				"Parametry wybierane przez u¿ytkownika:");
+				"Parametry wybierane przez uÅ¼ytkownika:");
 
 		final JSpinner spinnerA = new JSpinner();
 		spinnerA.setValue(1);
@@ -113,7 +113,7 @@ public class MainWindow extends JFrame {
 
 		JButton btnStart = new JButton("START");
 
-		final JButton btnClear = new JButton("Wyczyœæ");
+		final JButton btnClear = new JButton("WyczyÅ›Ä‡");
 
 		final JButton btnInfo = new JButton("Informacje");
 
@@ -442,7 +442,7 @@ public class MainWindow extends JFrame {
 										.addContainerGap()));
 
 		/**
-		 * Dodaje panel z figurami do okna g³ównego
+		 * Dodaje panel z figurami do okna gï¿½ï¿½wnego
 		 */
 
 		final pl.edu.pw.fizyka.pojava.lissajous.Lissajous panel_1 = new pl.edu.pw.fizyka.pojava.lissajous.Lissajous();
@@ -611,15 +611,15 @@ public class MainWindow extends JFrame {
 					btnFigure1.setText("Figura 1");
 					btnFigure2.setText("Figura 2");
 					btnFigure3.setText("Figura 3");
-					rdbtnOneColor.setText("Jednolity Kolor");
-					rdbtnGradColor.setText("Gradient Koloru");
-					btnClear.setText("Wyczyœæ");
+					btnClear.setText("WyczyÅ›Ä‡");
+					rdbtnOneColor.setText("Jednolity Kolor");  //nieuzywane
+					rdbtnGradColor.setText("Gradient Koloru"); //nieuzywane
 					btnInfo.setText("Informacje");
 					eng = false;
 					btnAnimate.setText("Animacja");
 					btnSave.setText("Zapisz");
 					lblParametryDoWyboru
-							.setText("Parametry wybierane przez u¿ytkownika:");
+							.setText("Parametry wybierane przez uÅ¼ytkownika:");
 				}
 			}
 		};
