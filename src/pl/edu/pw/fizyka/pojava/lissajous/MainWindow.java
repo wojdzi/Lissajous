@@ -594,8 +594,8 @@ public class MainWindow extends JFrame {
 					btnFigure1.setText("Curve 1");
 					btnFigure2.setText("Curve 2");
 					btnFigure3.setText("Curve 3");
-					rdbtnOneColor.setText("Plain Color");
-					rdbtnGradColor.setText("Gradient Color");
+					rdbtnOneColor.setText("Plain Color"); //nieuzywane
+					rdbtnGradColor.setText("Gradient Color"); //nieuzywane
 					btnClear.setText("Clear");
 					btnInfo.setText("Information");
 					eng = true;
