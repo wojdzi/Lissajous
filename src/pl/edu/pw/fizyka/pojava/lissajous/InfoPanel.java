@@ -29,7 +29,7 @@ public class InfoPanel extends JPanel {
 						"info.png"));
 			} else {
 				packedImage = ImageIO.read(this.getClass().getResourceAsStream(
-						"info2.png"));
+						"infoang.png"));
 			}
 
 		} catch (IOException e) {
