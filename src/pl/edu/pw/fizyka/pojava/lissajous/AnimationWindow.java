@@ -15,6 +15,8 @@ import javax.swing.JPanel;
  */
 
 public class AnimationWindow extends JFrame {
+	
+	private static final long serialVersionUID = -796465131835138251L;
 	Animation panel;
 	JPanel buttons;
 	JButton start, stop, pauza;

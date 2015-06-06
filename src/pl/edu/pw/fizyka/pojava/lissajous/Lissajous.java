@@ -2,7 +2,6 @@ package pl.edu.pw.fizyka.pojava.lissajous;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.Random;
 
 import javax.swing.JPanel;
 
@@ -16,6 +15,7 @@ import javax.swing.JPanel;
 
 public class Lissajous extends JPanel {
 
+	private static final long serialVersionUID = 4083114230878689697L;
 	int a = 0;
 	int b = 0;
 	int red = 0, green = 0, blue = 0;
@@ -41,6 +41,7 @@ public class Lissajous extends JPanel {
 
 	/**
 	 * @author Karolina
+	 * 
 	 */
 
 	@Override

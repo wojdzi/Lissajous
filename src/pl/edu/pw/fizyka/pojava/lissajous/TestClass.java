@@ -1,5 +1,5 @@
 package pl.edu.pw.fizyka.pojava.lissajous;
-
+/*
 import static org.junit.Assert.*;
 
 import java.awt.Color;
@@ -17,3 +17,6 @@ public class TestClass {
 	
 
 }
+*/
+
+//to cos mi sie nie kompiluje wiec zakomentowalem zeby zaczelo
