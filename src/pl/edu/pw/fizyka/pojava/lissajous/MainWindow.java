@@ -482,16 +482,8 @@ public class MainWindow extends JFrame {
 
 		ActionListener clear = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				panel_1.setValues(0, 0, redSlider.getValue(),
-						blueSlider.getValue(), greenSlider.getValue(),
-						(int) spinnerA.getValue(), (int) spinnerB.getValue(),
-						(int) spinnerD.getValue());
+				panel_1.setValues(0, 0, 0, 0, 0, 0, 0, 0);
 				panel_1.repaint();
-				bspinner.setValue(0);
-				aspinner.setValue(0);
-				spinnerA.setValue(0);
-				spinnerB.setValue(0);
-				spinnerD.setValue(0);
 				figureNumber = 0;
 			}
 		};
@@ -541,7 +533,8 @@ public class MainWindow extends JFrame {
 				figureNumber = 1;
 			}
 		};
-		btnFigure1.addActionListener(figure1); // Wojtek
+		// Wojtek
+		btnFigure1.addActionListener(figure1); 
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int A = (int) spinnerA.getValue();
@@ -559,7 +552,7 @@ public class MainWindow extends JFrame {
 		/**
 		 * Zapis do pliku i zmiana języka Wojtek
 		 */
-		btnSave.addActionListener(new ActionListener() { 
+		btnSave.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
@@ -583,8 +576,9 @@ public class MainWindow extends JFrame {
 				}
 			}
 		});
-
-		ActionListener angielski = new ActionListener() { // Wojtek
+		
+		// Wojtek
+		ActionListener angielski = new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
 				if (btnEnglish.getText() == "English") {
 					lblCzerwony.setText("Red");
@@ -594,8 +588,8 @@ public class MainWindow extends JFrame {
 					btnFigure1.setText("Curve 1");
 					btnFigure2.setText("Curve 2");
 					btnFigure3.setText("Curve 3");
-					rdbtnOneColor.setText("Plain Color"); //nieuzywane
-					rdbtnGradColor.setText("Gradient Color"); //nieuzywane
+					rdbtnOneColor.setText("Plain Color"); // nieuzywane
+					rdbtnGradColor.setText("Gradient Color"); // nieuzywane
 					btnClear.setText("Clear");
 					btnInfo.setText("Information");
 					eng = true;
@@ -612,8 +606,8 @@ public class MainWindow extends JFrame {
 					btnFigure2.setText("Figura 2");
 					btnFigure3.setText("Figura 3");
 					btnClear.setText("Wyczyść");
-					rdbtnOneColor.setText("Jednolity Kolor");  //nieuzywane
-					rdbtnGradColor.setText("Gradient Koloru"); //nieuzywane
+					rdbtnOneColor.setText("Jednolity Kolor"); // nieuzywane
+					rdbtnGradColor.setText("Gradient Koloru"); // nieuzywane
 					btnInfo.setText("Informacje");
 					eng = false;
 					btnAnimate.setText("Animacja");
@@ -625,7 +619,7 @@ public class MainWindow extends JFrame {
 		};
 		btnEnglish.addActionListener(angielski);
 		/**
-		 * change listenery do kolor�w Wojtek
+		 * change listenery do kolorów Wojtek
 		 */
 
 		ChangeListener slideRed = new ChangeListener() {

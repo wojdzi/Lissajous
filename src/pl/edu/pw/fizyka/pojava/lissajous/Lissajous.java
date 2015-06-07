@@ -48,7 +48,7 @@ public class Lissajous extends JPanel {
 		super.paintComponent(g);
 
 		/**
-		 * uzywane do malowania danego obszaru nie calosci po usunięciu tej
+		 * super uzywane do malowania danego obszaru nie calosci po usunięciu tej
 		 * linijki layout jest zaubrzony i figury rysują się jedna na drugiej
 		 */
 
