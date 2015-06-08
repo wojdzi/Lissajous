@@ -60,6 +60,7 @@ public class MainWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public MainWindow() {
+		super("Lissajous");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 839, 538);
 		contentPane = new JPanel();
@@ -534,7 +535,7 @@ public class MainWindow extends JFrame {
 			}
 		};
 		// Wojtek
-		btnFigure1.addActionListener(figure1); 
+		btnFigure1.addActionListener(figure1);
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int A = (int) spinnerA.getValue();
@@ -576,9 +577,9 @@ public class MainWindow extends JFrame {
 				}
 			}
 		});
-		
+
 		// Wojtek
-		ActionListener angielski = new ActionListener() { 
+		ActionListener angielski = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btnEnglish.getText() == "English") {
 					lblCzerwony.setText("Red");

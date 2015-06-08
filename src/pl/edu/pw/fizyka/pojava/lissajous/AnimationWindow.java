@@ -15,13 +15,14 @@ import javax.swing.JPanel;
  */
 
 public class AnimationWindow extends JFrame {
-	
+
 	private static final long serialVersionUID = -796465131835138251L;
 	Animation panel;
 	JPanel buttons;
 	JButton start, stop, pauza;
 
 	public AnimationWindow() {
+		super("Animation");
 		setSize(800, 600);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(new BorderLayout());
