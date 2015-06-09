@@ -33,7 +33,7 @@ public class InfoPanel extends JPanel {
 			}
 
 		} catch (IOException e) {
-			System.err.println("Blad odczytu obrazka");
+			System.err.println("Błąd odczytu obrazka");
 			e.printStackTrace();
 		}
 

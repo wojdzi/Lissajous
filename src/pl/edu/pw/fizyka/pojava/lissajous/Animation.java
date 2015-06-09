@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JPanel;
 
@@ -15,17 +16,12 @@ import javax.swing.JPanel;
 public class Animation extends JPanel implements Runnable {
 
 	private static final long serialVersionUID = -1035237221865682731L;
-	public Thread thread;
-	public boolean thread_suspended;
-	double xx = 50, yy = 50;
-	double r = 5;
-	int i;
-	ArrayList<Integer> curve1_x = new ArrayList<Integer>();
-	ArrayList<Integer> curve1_y = new ArrayList<Integer>();
-
-	public Animation() {
-		super();
-	}
+	private Thread thread;
+	private double xx = 50, yy = 50;
+	private static final double R = 5;
+	private int i;
+	private List<Integer> curve1_x = new ArrayList<Integer>();
+	private List<Integer> curve1_y = new ArrayList<Integer>();
 
 	// @Override
 	public void paintComponent(Graphics gr) { // Karolina
@@ -34,14 +30,14 @@ public class Animation extends JPanel implements Runnable {
 		g.fillRect(0, 0, getSize().width, getSize().height);
 
 		g.setColor(Color.BLACK);
-		int xPosition = (int) (xx * getWidth()) / 2 + getWidth() / 2 - (int) r;
+		int xPosition = (int) (xx * getWidth()) / 2 + getWidth() / 2 - (int) R;
 		int yPosition = (int) (yy * getHeight()) / 2 + getHeight() / 2
-				- (int) r;
+				- (int) R;
 
 		// Wojtek
-		g.fillOval(xPosition, yPosition, (int) r * 2, (int) r * 2);
-		curve1_x.add(xPosition + (int) r);
-		curve1_y.add(yPosition + (int) r);
+		g.fillOval(xPosition, yPosition, (int) R * 2, (int) R * 2);
+		curve1_x.add(xPosition + (int) R);
+		curve1_y.add(yPosition + (int) R);
 		int count = curve1_x.size();
 		for (int j = 4; j < count; ++j) {
 			g.drawLine(curve1_x.get(j), curve1_y.get(j), curve1_x.get(j - 1),
@@ -51,21 +47,17 @@ public class Animation extends JPanel implements Runnable {
 	}
 
 	void ovalMovement() {
-
-		xx = Math.sin(Math.toDegrees(3 * 2 * Math.PI * i / 25000));
-		yy = Math.sin(Math.toDegrees(4 * 2 * Math.PI * i / 25000));
-
+		xx = Math.sin(3 * 2 * Math.PI * i / 1000);
+		yy = Math.sin(4 * 2 * Math.PI * i / 1000);
 	}
 
 	@Override
 	public void run() {
-
 		while (thread != null) {
 			try {
-				Thread.sleep(50);
+				Thread.sleep(16);
 
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			i++;
@@ -79,14 +71,14 @@ public class Animation extends JPanel implements Runnable {
 		if (thread == null) {
 			thread = new Thread(this);
 			thread.start();
-			thread_suspended = false;
 		}
 	}
 
 	public void stop() {
 		// Zatrzymywanie watku to przypisywanie mu nulla
-		if (thread != null)
+		if (thread != null) {
 			thread = null;
+		}
 	}
 
 }
