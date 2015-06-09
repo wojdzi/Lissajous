@@ -58,7 +58,7 @@ public class AnimationWindow extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		AnimationWindow Window = new AnimationWindow();
-		Window.setVisible(true);
+		AnimationWindow window = new AnimationWindow();
+		window.setVisible(true);
 	}
 }

@@ -45,6 +45,7 @@ public class MainWindow extends JFrame {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					MainWindow frame = new MainWindow();
@@ -107,10 +108,10 @@ public class MainWindow extends JFrame {
 		JLabel label = new JLabel("\u03B4");
 		final JSpinner aspinner = new JSpinner();
 		aspinner.setValue(0);
-		JLabel lblA_1 = new JLabel("a");
+		JLabel lblSmallA = new JLabel("a");
 		final JSpinner bspinner = new JSpinner();
 		bspinner.setValue(0);
-		JLabel lblB_1 = new JLabel("b");
+		JLabel lblSmallB = new JLabel("b");
 
 		JButton btnStart = new JButton("START");
 
@@ -126,12 +127,12 @@ public class MainWindow extends JFrame {
 
 		JPanel panel = new JPanel();
 
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane
-				.setHorizontalGroup(gl_contentPane
+		GroupLayout glContentPane = new GroupLayout(contentPane);
+		glContentPane
+				.setHorizontalGroup(glContentPane
 						.createParallelGroup(Alignment.TRAILING)
 						.addGroup(
-								gl_contentPane
+								glContentPane
 										.createSequentialGroup()
 										.addGap(16)
 										.addComponent(panel,
@@ -139,15 +140,15 @@ public class MainWindow extends JFrame {
 												Short.MAX_VALUE)
 										.addGap(18)
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.TRAILING)
 														.addGroup(
-																gl_contentPane
+																glContentPane
 																		.createParallelGroup(
 																				Alignment.LEADING)
 																		.addGroup(
-																				gl_contentPane
+																				glContentPane
 																						.createSequentialGroup()
 																						.addComponent(
 																								rdbtnOneColor)
@@ -155,7 +156,7 @@ public class MainWindow extends JFrame {
 																						.addComponent(
 																								rdbtnGradColor))
 																		.addGroup(
-																				gl_contentPane
+																				glContentPane
 																						.createSequentialGroup()
 																						.addComponent(
 																								btnFigure1)
@@ -170,10 +171,10 @@ public class MainWindow extends JFrame {
 														.addComponent(
 																lblParametryDoWyboru)
 														.addGroup(
-																gl_contentPane
+																glContentPane
 																		.createSequentialGroup()
 																		.addComponent(
-																				lblA_1)
+																				lblSmallA)
 																		.addPreferredGap(
 																				ComponentPlacement.RELATED)
 																		.addComponent(
@@ -193,7 +194,7 @@ public class MainWindow extends JFrame {
 																				GroupLayout.DEFAULT_SIZE,
 																				GroupLayout.PREFERRED_SIZE))
 														.addGroup(
-																gl_contentPane
+																glContentPane
 																		.createSequentialGroup()
 																		.addComponent(
 																				label)
@@ -205,10 +206,10 @@ public class MainWindow extends JFrame {
 																				GroupLayout.DEFAULT_SIZE,
 																				GroupLayout.PREFERRED_SIZE))
 														.addGroup(
-																gl_contentPane
+																glContentPane
 																		.createSequentialGroup()
 																		.addComponent(
-																				lblB_1)
+																				lblSmallB)
 																		.addPreferredGap(
 																				ComponentPlacement.RELATED)
 																		.addComponent(
@@ -228,10 +229,10 @@ public class MainWindow extends JFrame {
 																				GroupLayout.DEFAULT_SIZE,
 																				GroupLayout.PREFERRED_SIZE))
 														.addGroup(
-																gl_contentPane
+																glContentPane
 																		.createSequentialGroup()
 																		.addGroup(
-																				gl_contentPane
+																				glContentPane
 																						.createParallelGroup(
 																								Alignment.TRAILING)
 																						.addComponent(
@@ -242,11 +243,11 @@ public class MainWindow extends JFrame {
 																								btnAnimate))
 																		.addGap(18)
 																		.addGroup(
-																				gl_contentPane
+																				glContentPane
 																						.createParallelGroup(
 																								Alignment.TRAILING)
 																						.addGroup(
-																								gl_contentPane
+																								glContentPane
 																										.createParallelGroup(
 																												Alignment.LEADING)
 																										.addComponent(
@@ -256,10 +257,10 @@ public class MainWindow extends JFrame {
 																						.addComponent(
 																								btnSave)))
 														.addGroup(
-																gl_contentPane
+																glContentPane
 																		.createSequentialGroup()
 																		.addGroup(
-																				gl_contentPane
+																				glContentPane
 																						.createParallelGroup(
 																								Alignment.TRAILING)
 																						.addComponent(
@@ -271,7 +272,7 @@ public class MainWindow extends JFrame {
 																		.addPreferredGap(
 																				ComponentPlacement.UNRELATED)
 																		.addGroup(
-																				gl_contentPane
+																				glContentPane
 																						.createParallelGroup(
 																								Alignment.LEADING,
 																								false)
@@ -291,14 +292,14 @@ public class MainWindow extends JFrame {
 																								176,
 																								Short.MAX_VALUE))))
 										.addContainerGap()));
-		gl_contentPane
-				.setVerticalGroup(gl_contentPane
+		glContentPane
+				.setVerticalGroup(glContentPane
 						.createParallelGroup(Alignment.LEADING)
 						.addGroup(
-								gl_contentPane
+								glContentPane
 										.createSequentialGroup()
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.BASELINE)
 														.addComponent(
@@ -310,7 +311,7 @@ public class MainWindow extends JFrame {
 										.addPreferredGap(
 												ComponentPlacement.UNRELATED)
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.BASELINE)
 														.addComponent(
@@ -319,7 +320,7 @@ public class MainWindow extends JFrame {
 																rdbtnGradColor))
 										.addGap(11)
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.LEADING)
 														.addComponent(
@@ -332,7 +333,7 @@ public class MainWindow extends JFrame {
 										.addPreferredGap(
 												ComponentPlacement.RELATED)
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.LEADING)
 														.addComponent(
@@ -345,7 +346,7 @@ public class MainWindow extends JFrame {
 										.addPreferredGap(
 												ComponentPlacement.RELATED)
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.LEADING)
 														.addComponent(
@@ -361,7 +362,7 @@ public class MainWindow extends JFrame {
 										.addPreferredGap(
 												ComponentPlacement.UNRELATED)
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.BASELINE)
 														.addComponent(
@@ -375,11 +376,11 @@ public class MainWindow extends JFrame {
 																GroupLayout.PREFERRED_SIZE,
 																GroupLayout.DEFAULT_SIZE,
 																GroupLayout.PREFERRED_SIZE)
-														.addComponent(lblA_1))
+														.addComponent(lblSmallA))
 										.addPreferredGap(
 												ComponentPlacement.RELATED)
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.BASELINE)
 														.addComponent(
@@ -393,11 +394,11 @@ public class MainWindow extends JFrame {
 																GroupLayout.PREFERRED_SIZE,
 																GroupLayout.DEFAULT_SIZE,
 																GroupLayout.PREFERRED_SIZE)
-														.addComponent(lblB_1))
+														.addComponent(lblSmallB))
 										.addPreferredGap(
 												ComponentPlacement.RELATED)
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.BASELINE)
 														.addComponent(
@@ -409,7 +410,7 @@ public class MainWindow extends JFrame {
 										.addPreferredGap(
 												ComponentPlacement.RELATED)
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.BASELINE)
 														.addComponent(btnStart)
@@ -417,7 +418,7 @@ public class MainWindow extends JFrame {
 										.addPreferredGap(
 												ComponentPlacement.UNRELATED)
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.BASELINE)
 														.addComponent(
@@ -427,14 +428,14 @@ public class MainWindow extends JFrame {
 												ComponentPlacement.RELATED,
 												142, Short.MAX_VALUE)
 										.addGroup(
-												gl_contentPane
+												glContentPane
 														.createParallelGroup(
 																Alignment.BASELINE)
 														.addComponent(
 																btnEnglish)
 														.addComponent(btnInfo)))
 						.addGroup(
-								gl_contentPane
+								glContentPane
 										.createSequentialGroup()
 										.addContainerGap()
 										.addComponent(panel,
@@ -443,21 +444,21 @@ public class MainWindow extends JFrame {
 										.addContainerGap()));
 
 		/**
-		 * Dodaje panel z figurami do okna g��wnego
+		 * Dodaje panel z figurami do okna głównego
 		 */
 
-		final pl.edu.pw.fizyka.pojava.lissajous.Lissajous panel_1 = new pl.edu.pw.fizyka.pojava.lissajous.Lissajous();
+		final Lissajous figurePanel = new Lissajous();
 
 		GroupLayout gl_panel = new GroupLayout(panel);
-		panel_1.setBorder(new LineBorder(Color.black));
+		figurePanel.setBorder(new LineBorder(Color.black));
 		gl_panel.setHorizontalGroup(gl_panel.createParallelGroup(
-				Alignment.LEADING).addComponent(panel_1,
+				Alignment.LEADING).addComponent(figurePanel,
 				GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE));
 		gl_panel.setVerticalGroup(gl_panel.createParallelGroup(
-				Alignment.LEADING).addComponent(panel_1, Alignment.TRAILING,
+				Alignment.LEADING).addComponent(figurePanel, Alignment.TRAILING,
 				GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE));
 		panel.setLayout(gl_panel);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.setLayout(glContentPane);
 
 		/**
 		 * nowe okna Karolina
@@ -483,8 +484,8 @@ public class MainWindow extends JFrame {
 
 		ActionListener clear = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				panel_1.setValues(0, 0, 0, 0, 0, 0, 0, 0);
-				panel_1.repaint();
+				figurePanel.setValues(0, 0, 0, 0, 0, 0, 0, 0);
+				figurePanel.repaint();
 				figureNumber = 0;
 			}
 		};
@@ -493,9 +494,9 @@ public class MainWindow extends JFrame {
 		ActionListener figure3 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				panel_1.setValues(1, 2, redSlider.getValue(),
+				figurePanel.setValues(1, 2, redSlider.getValue(),
 						blueSlider.getValue(), greenSlider.getValue(), 1, 1, 0);
-				panel_1.repaint();
+				figurePanel.repaint();
 				bspinner.setValue(2);
 				aspinner.setValue(1);
 				spinnerA.setValue(1);
@@ -508,9 +509,9 @@ public class MainWindow extends JFrame {
 
 		ActionListener figure2 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				panel_1.setValues(2, 3, redSlider.getValue(),
+				figurePanel.setValues(2, 3, redSlider.getValue(),
 						blueSlider.getValue(), greenSlider.getValue(), 1, 1, 0);
-				panel_1.repaint();
+				figurePanel.repaint();
 				bspinner.setValue(3);
 				aspinner.setValue(2);
 				spinnerA.setValue(1);
@@ -523,9 +524,9 @@ public class MainWindow extends JFrame {
 
 		ActionListener figure1 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				panel_1.setValues(3, 4, redSlider.getValue(),
+				figurePanel.setValues(3, 4, redSlider.getValue(),
 						blueSlider.getValue(), greenSlider.getValue(), 1, 1, 0);
-				panel_1.repaint();
+				figurePanel.repaint();
 				bspinner.setValue(4);
 				aspinner.setValue(3);
 				spinnerA.setValue(1);
@@ -543,9 +544,9 @@ public class MainWindow extends JFrame {
 				int a = (int) aspinner.getValue();
 				int b = (int) bspinner.getValue();
 				int d = (int) spinnerD.getValue();
-				panel_1.setValues(a, b, redSlider.getValue(),
+				figurePanel.setValues(a, b, redSlider.getValue(),
 						blueSlider.getValue(), greenSlider.getValue(), A, B, d);
-				panel_1.repaint();
+				figurePanel.repaint();
 				figureNumber = 4;
 			}
 		});
@@ -557,11 +558,11 @@ public class MainWindow extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				BufferedImage image = new BufferedImage(panel_1.getWidth(),
-						panel_1.getHeight(), BufferedImage.TYPE_INT_RGB);
+				BufferedImage image = new BufferedImage(figurePanel.getWidth(),
+						figurePanel.getHeight(), BufferedImage.TYPE_INT_RGB);
 				Graphics2D graphics2D = image.createGraphics();
 
-				panel_1.paint(graphics2D);
+				figurePanel.paint(graphics2D);
 				JFileChooser filechooser = new JFileChooser();
 				FileNameExtensionFilter filter = new FileNameExtensionFilter(
 						"JPG Images", "jpg");
@@ -629,29 +630,29 @@ public class MainWindow extends JFrame {
 				revalidate();
 				switch (figureNumber) {
 				case 0:
-					panel_1.setValues(0, 0, redSlider.getValue(),
+					figurePanel.setValues(0, 0, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),
 							(int) spinnerA.getValue(),
 							(int) spinnerB.getValue(),
 							(int) spinnerD.getValue());
 					break;
 				case 1:
-					panel_1.setValues(3, 4, redSlider.getValue(),
+					figurePanel.setValues(3, 4, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(), 1,
 							1, 0);
 					break;
 				case 2:
-					panel_1.setValues(2, 3, redSlider.getValue(),
+					figurePanel.setValues(2, 3, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(), 1,
 							1, 0);
 					break;
 				case 3:
-					panel_1.setValues(1, 2, redSlider.getValue(),
+					figurePanel.setValues(1, 2, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(), 1,
 							1, 0);
 					break;
 				case 4:
-					panel_1.setValues((int) aspinner.getValue(),
+					figurePanel.setValues((int) aspinner.getValue(),
 							(int) bspinner.getValue(), redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),
 							(int) spinnerA.getValue(),
@@ -659,7 +660,7 @@ public class MainWindow extends JFrame {
 							(int) spinnerD.getValue());
 					break;
 				}
-				panel_1.repaint();
+				figurePanel.repaint();
 
 			}
 
@@ -672,29 +673,29 @@ public class MainWindow extends JFrame {
 				revalidate();
 				switch (figureNumber) {
 				case 0:
-					panel_1.setValues(0, 0, redSlider.getValue(),
+					figurePanel.setValues(0, 0, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),
 							(int) spinnerA.getValue(),
 							(int) spinnerB.getValue(),
 							(int) spinnerD.getValue());
 					break;
 				case 1:
-					panel_1.setValues(3, 4, redSlider.getValue(),
+					figurePanel.setValues(3, 4, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(), 1,
 							1, 0);
 					break;
 				case 2:
-					panel_1.setValues(2, 3, redSlider.getValue(),
+					figurePanel.setValues(2, 3, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(), 1,
 							1, 0);
 					break;
 				case 3:
-					panel_1.setValues(1, 2, redSlider.getValue(),
+					figurePanel.setValues(1, 2, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(), 1,
 							1, 0);
 					break;
 				case 4:
-					panel_1.setValues((int) aspinner.getValue(),
+					figurePanel.setValues((int) aspinner.getValue(),
 							(int) bspinner.getValue(), redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),
 							(int) spinnerA.getValue(),
@@ -702,7 +703,7 @@ public class MainWindow extends JFrame {
 							(int) spinnerD.getValue());
 					break;
 				}
-				panel_1.repaint();
+				figurePanel.repaint();
 			}
 
 		};
@@ -715,29 +716,29 @@ public class MainWindow extends JFrame {
 				revalidate();
 				switch (figureNumber) {
 				case 0:
-					panel_1.setValues(0, 0, redSlider.getValue(),
+					figurePanel.setValues(0, 0, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),
 							(int) spinnerA.getValue(),
 							(int) spinnerB.getValue(),
 							(int) spinnerD.getValue());
 					break;
 				case 1:
-					panel_1.setValues(3, 4, redSlider.getValue(),
+					figurePanel.setValues(3, 4, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(), 1,
 							1, 0);
 					break;
 				case 2:
-					panel_1.setValues(2, 3, redSlider.getValue(),
+					figurePanel.setValues(2, 3, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(), 1,
 							1, 0);
 					break;
 				case 3:
-					panel_1.setValues(1, 2, redSlider.getValue(),
+					figurePanel.setValues(1, 2, redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(), 1,
 							1, 0);
 					break;
 				case 4:
-					panel_1.setValues((int) aspinner.getValue(),
+					figurePanel.setValues((int) aspinner.getValue(),
 							(int) bspinner.getValue(), redSlider.getValue(),
 							blueSlider.getValue(), greenSlider.getValue(),
 							(int) spinnerA.getValue(),
@@ -746,7 +747,7 @@ public class MainWindow extends JFrame {
 					break;
 
 				}
-				panel_1.repaint();
+				figurePanel.repaint();
 			}
 
 		};

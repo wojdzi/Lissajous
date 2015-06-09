@@ -24,7 +24,7 @@ public class InfoPanel extends JPanel {
 	public InfoPanel(boolean eng) {
 
 		try {
-			if (eng == false) {
+			if (!eng) {
 				packedImage = ImageIO.read(this.getClass().getResourceAsStream(
 						"info.png"));
 			} else {
@@ -34,7 +34,6 @@ public class InfoPanel extends JPanel {
 
 		} catch (IOException e) {
 			System.err.println("Błąd odczytu obrazka");
-			e.printStackTrace();
 		}
 
 		panelWidth = packedImage.getWidth() + 5;

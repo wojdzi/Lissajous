@@ -20,10 +20,10 @@ public class Animation extends JPanel implements Runnable {
 	private double xx = 50, yy = 50;
 	private static final double R = 5;
 	private int i;
-	private List<Integer> curve1_x = new ArrayList<Integer>();
-	private List<Integer> curve1_y = new ArrayList<Integer>();
+	private List<Integer> curveX = new ArrayList<Integer>();
+	private List<Integer> curveY = new ArrayList<Integer>();
 
-	// @Override
+	@Override
 	public void paintComponent(Graphics gr) { // Karolina
 		Graphics2D g = (Graphics2D) gr;
 		g.setColor(Color.white);
@@ -36,12 +36,12 @@ public class Animation extends JPanel implements Runnable {
 
 		// Wojtek
 		g.fillOval(xPosition, yPosition, (int) R * 2, (int) R * 2);
-		curve1_x.add(xPosition + (int) R);
-		curve1_y.add(yPosition + (int) R);
-		int count = curve1_x.size();
+		curveX.add(xPosition + (int) R);
+		curveY.add(yPosition + (int) R);
+		int count = curveX.size();
 		for (int j = 4; j < count; ++j) {
-			g.drawLine(curve1_x.get(j), curve1_y.get(j), curve1_x.get(j - 1),
-					curve1_y.get(j - 1));
+			g.drawLine(curveX.get(j), curveY.get(j), curveX.get(j - 1),
+					curveY.get(j - 1));
 		}
 
 	}
