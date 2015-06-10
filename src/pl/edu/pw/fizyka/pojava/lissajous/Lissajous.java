@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 
 /**
  * 
- * 
  * @author Karolina
  * @edit Wojtek
  */
@@ -44,24 +43,17 @@ public class Lissajous extends JPanel {
 	 */
 
 	@Override
-	protected void paintComponent(Graphics g) {
-		super.paintComponent(g);
-
-		/**
-		 * super uzywane do malowania danego obszaru nie calosci po usunięciu
-		 * tej linijki layout jest zaubrzony i figury rysują się jedna na
-		 * drugiej
-		 */
-
+	protected void paintComponent(Graphics graphics) {
+		super.paintComponent(graphics);
 		int xx, yy;
 
-		g.setColor(new Color(redColor, greenColor, blueColor));
+		graphics.setColor(new Color(redColor, greenColor, blueColor));
 		for (int ii = 0; ii < 500000; ii++) {
 
 			xx = (int) ((bigAParameter
 					* (Math.sin(smallAParameter * ii + deltaParameter) + 1) / bigBParameter) * (0.5 * getSize().width));
 			yy = (int) ((bigBParameter * (Math.sin(smallBParameter * ii) + 1) / bigAParameter) * (0.5 * getSize().height));
-			g.drawLine(xx, yy, xx, yy);
+			graphics.drawLine(xx, yy, xx, yy);
 
 		}
 	}

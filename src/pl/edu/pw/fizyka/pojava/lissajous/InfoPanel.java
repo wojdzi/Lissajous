@@ -36,16 +36,16 @@ public class InfoPanel extends JPanel {
 			System.err.println("Błąd odczytu obrazka");
 		}
 
-		panelWidth = packedImage.getWidth() + 5;
-		panelHeight = packedImage.getHeight() + 5;
+		panelWidth = packedImage.getWidth();
+		panelHeight = packedImage.getHeight();
 		Dimension dimension = new Dimension(panelWidth, panelHeight);
 		setPreferredSize(dimension);
 	}
 
 	@Override
-	public void paintComponent(Graphics g) {
-		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(packedImage, 0, 0, this);
+	public void paintComponent(Graphics graphics) {
+		Graphics2D graphics2D = (Graphics2D) graphics;
+		graphics2D.drawImage(packedImage, 5, 5, this);
 	}
 
 }

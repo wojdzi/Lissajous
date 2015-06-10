@@ -20,7 +20,7 @@ public class InfoFrame extends JFrame {
 		super("Information");
 
 		this.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-		setSize(705, 695);
+		setSize(710, 700);
 		this.setLayout(new BorderLayout());
 
 		infoPanel = new InfoPanel(eng);
