@@ -15,26 +15,26 @@ import javax.swing.JPanel;
 public class Lissajous extends JPanel {
 
 	private static final long serialVersionUID = 4083114230878689697L;
-	int smallA = 0;
-	int smallB = 0;
-	int red = 0, green = 0, blue = 0;
-	int aa = 1;
-	int bb = 1;
-	double dd = Math.PI / 2;
+	int smallAParameter = 0;
+	int smallBParameter = 0;
+	int redColor = 0, greenColor = 0, blueColor = 0;
+	int bigAParameter = 1;
+	int bigBParameter = 1;
+	double deltaParameter = Math.PI / 2;
 
 	/**
 	 * @author Wojtek
 	 */
-	public void setValues(int xx, int yy, int rr, int bl, int gg, int bigA,
-			int bigB, int delta) {
-		smallA = xx;
-		smallB = yy;
-		red = rr;
-		green = gg;
-		blue = bl;
-		aa = bigA;
-		bb = bigB;
-		dd = delta;
+	public void setValues(int xx, int yy, int red, int blue, int green,
+			int bigA, int bigB, int delta) {
+		smallAParameter = xx;
+		smallBParameter = yy;
+		redColor = red;
+		greenColor = green;
+		blueColor = blue;
+		bigAParameter = bigA;
+		bigBParameter = bigB;
+		deltaParameter = delta;
 
 	}
 
@@ -55,11 +55,12 @@ public class Lissajous extends JPanel {
 
 		int xx, yy;
 
-		g.setColor(new Color(red, green, blue));
+		g.setColor(new Color(redColor, greenColor, blueColor));
 		for (int ii = 0; ii < 500000; ii++) {
 
-			xx = (int) ((aa * (Math.sin(smallA * ii + dd) + 1) / bb) * (0.5 * getSize().width));
-			yy = (int) ((bb * (Math.sin(smallB * ii) + 1) / aa) * (0.5 * getSize().height));
+			xx = (int) ((bigAParameter
+					* (Math.sin(smallAParameter * ii + deltaParameter) + 1) / bigBParameter) * (0.5 * getSize().width));
+			yy = (int) ((bigBParameter * (Math.sin(smallBParameter * ii) + 1) / bigAParameter) * (0.5 * getSize().height));
 			g.drawLine(xx, yy, xx, yy);
 
 		}
