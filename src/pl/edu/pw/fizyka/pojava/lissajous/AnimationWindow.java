@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 public class AnimationWindow extends JFrame {
 
 	private static final long serialVersionUID = -796465131835138251L;
-	Animation panel;
+	Animation animationPanel;
 	JPanel buttons;
 	JButton start, stop, pauza;
 
@@ -27,7 +27,7 @@ public class AnimationWindow extends JFrame {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setLayout(new BorderLayout());
 
-		panel = new Animation();
+		animationPanel = new Animation();
 
 		buttons = new JPanel(new FlowLayout());
 
@@ -39,21 +39,21 @@ public class AnimationWindow extends JFrame {
 		stop.addActionListener(new StopAction());
 		buttons.add(stop);
 
-		add(panel, BorderLayout.CENTER);
+		add(animationPanel, BorderLayout.CENTER);
 		add(buttons, BorderLayout.SOUTH);
 	}
 
 	class StartAction implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			panel.start();
+			animationPanel.start();
 		}
 	}
 
 	class StopAction implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			panel.stop();
+			animationPanel.stop();
 		}
 	}
 

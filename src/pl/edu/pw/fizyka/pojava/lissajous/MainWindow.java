@@ -38,7 +38,7 @@ public class MainWindow extends JFrame {
 	private JPanel contentPane;
 
 	private int figureNumber = 0;
-	private boolean eng = false;
+	private boolean english = false;
 
 	/**
 	 * Launch the application.
@@ -76,22 +76,21 @@ public class MainWindow extends JFrame {
 		redSlider.setMinimum(0);
 		redSlider.setMaximum(255);
 		redSlider.setValue(0);
-		final JLabel lblCzerwony = new JLabel("czerwony");
+		final JLabel lblRed = new JLabel("czerwony");
 		final JSlider blueSlider = new JSlider();
 		blueSlider.setMinimum(0);
 		blueSlider.setMaximum(255);
 		blueSlider.setValue(0);
-		final JLabel lblNiebieski = new JLabel("niebieski");
+		final JLabel lblBlue = new JLabel("niebieski");
 		final JSlider greenSlider = new JSlider();
 		greenSlider.setMinimum(0);
 		greenSlider.setMaximum(255);
 		greenSlider.setValue(0);
-		final JLabel lblZielony = new JLabel("zielony");
+		final JLabel lblGreen = new JLabel("zielony");
 
-		final JRadioButton rdbtnOneColor = new JRadioButton("jednolity kolor");
-		rdbtnOneColor.setSelected(true);
+		final JRadioButton rdbtnOneColor = new JRadioButton("jednolity kolor"); //nieużywane
 		rdbtnOneColor.setVisible(false);
-		final JRadioButton rdbtnGradColor = new JRadioButton("gradient koloru");
+		final JRadioButton rdbtnGradColor = new JRadioButton("gradient koloru"); //nieużywane
 		rdbtnGradColor.setVisible(false);
 
 		final JLabel lblParametryDoWyboru = new JLabel(
@@ -264,11 +263,11 @@ public class MainWindow extends JFrame {
 																						.createParallelGroup(
 																								Alignment.TRAILING)
 																						.addComponent(
-																								lblZielony)
+																								lblGreen)
 																						.addComponent(
-																								lblCzerwony)
+																								lblRed)
 																						.addComponent(
-																								lblNiebieski))
+																								lblBlue))
 																		.addPreferredGap(
 																				ComponentPlacement.UNRELATED)
 																		.addGroup(
@@ -329,7 +328,7 @@ public class MainWindow extends JFrame {
 																GroupLayout.DEFAULT_SIZE,
 																GroupLayout.PREFERRED_SIZE)
 														.addComponent(
-																lblCzerwony))
+																lblRed))
 										.addPreferredGap(
 												ComponentPlacement.RELATED)
 										.addGroup(
@@ -342,7 +341,7 @@ public class MainWindow extends JFrame {
 																GroupLayout.DEFAULT_SIZE,
 																GroupLayout.PREFERRED_SIZE)
 														.addComponent(
-																lblNiebieski))
+																lblBlue))
 										.addPreferredGap(
 												ComponentPlacement.RELATED)
 										.addGroup(
@@ -355,7 +354,7 @@ public class MainWindow extends JFrame {
 																GroupLayout.DEFAULT_SIZE,
 																GroupLayout.PREFERRED_SIZE)
 														.addComponent(
-																lblZielony))
+																lblGreen))
 										.addPreferredGap(
 												ComponentPlacement.RELATED)
 										.addComponent(lblParametryDoWyboru)
@@ -449,15 +448,15 @@ public class MainWindow extends JFrame {
 
 		final Lissajous figurePanel = new Lissajous();
 
-		GroupLayout gl_panel = new GroupLayout(panel);
+		GroupLayout groupLayoutPanel = new GroupLayout(panel);
 		figurePanel.setBorder(new LineBorder(Color.black));
-		gl_panel.setHorizontalGroup(gl_panel.createParallelGroup(
+		groupLayoutPanel.setHorizontalGroup(groupLayoutPanel.createParallelGroup(
 				Alignment.LEADING).addComponent(figurePanel,
 				GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE));
-		gl_panel.setVerticalGroup(gl_panel.createParallelGroup(
+		groupLayoutPanel.setVerticalGroup(groupLayoutPanel.createParallelGroup(
 				Alignment.LEADING).addComponent(figurePanel, Alignment.TRAILING,
 				GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE));
-		panel.setLayout(gl_panel);
+		panel.setLayout(groupLayoutPanel);
 		contentPane.setLayout(glContentPane);
 
 		/**
@@ -467,14 +466,16 @@ public class MainWindow extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				AnimationWindow animateWindow = new AnimationWindow();
 				animateWindow.setVisible(true);
+				animateWindow.setResizable(false);
 
 			}
 		});
 
 		btnInfo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InfoFrame info = new InfoFrame(eng);
+				InfoFrame info = new InfoFrame(english);
 				info.setVisible(true);
+				info.setResizable(false);
 
 			}
 		});
@@ -580,12 +581,12 @@ public class MainWindow extends JFrame {
 		});
 
 		// Wojtek
-		ActionListener angielski = new ActionListener() {
+		ActionListener englishLanguage = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btnEnglish.getText() == "English") {
-					lblCzerwony.setText("Red");
-					lblNiebieski.setText("Blue");
-					lblZielony.setText("Green");
+					lblRed.setText("Red");
+					lblBlue.setText("Blue");
+					lblGreen.setText("Green");
 					btnEnglish.setText("Polski");
 					btnFigure1.setText("Curve 1");
 					btnFigure2.setText("Curve 2");
@@ -594,15 +595,15 @@ public class MainWindow extends JFrame {
 					rdbtnGradColor.setText("Gradient Color"); // nieuzywane
 					btnClear.setText("Clear");
 					btnInfo.setText("Information");
-					eng = true;
+					english = true;
 					btnAnimate.setText("Animation");
 					btnSave.setText("Save");
 					lblParametryDoWyboru
 							.setText("Parameters values selected by the user:");
 				} else {
-					lblCzerwony.setText("Czerwony");
-					lblNiebieski.setText("Niebieski");
-					lblZielony.setText("Zielony");
+					lblRed.setText("Czerwony");
+					lblBlue.setText("Niebieski");
+					lblGreen.setText("Zielony");
 					btnEnglish.setText("English");
 					btnFigure1.setText("Figura 1");
 					btnFigure2.setText("Figura 2");
@@ -611,7 +612,7 @@ public class MainWindow extends JFrame {
 					rdbtnOneColor.setText("Jednolity Kolor"); // nieuzywane
 					rdbtnGradColor.setText("Gradient Koloru"); // nieuzywane
 					btnInfo.setText("Informacje");
-					eng = false;
+					english = false;
 					btnAnimate.setText("Animacja");
 					btnSave.setText("Zapisz");
 					lblParametryDoWyboru
@@ -619,7 +620,7 @@ public class MainWindow extends JFrame {
 				}
 			}
 		};
-		btnEnglish.addActionListener(angielski);
+		btnEnglish.addActionListener(englishLanguage);
 		/**
 		 * change listenery do kolorów Wojtek
 		 */

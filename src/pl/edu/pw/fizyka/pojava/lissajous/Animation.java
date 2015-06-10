@@ -18,8 +18,8 @@ public class Animation extends JPanel implements Runnable {
 	private static final long serialVersionUID = -1035237221865682731L;
 	private Thread thread;
 	private double xx = 50, yy = 50;
-	private static final double R = 5;
-	private int i;
+	private static final double ovalRadius = 5;
+	private int ii;
 	private List<Integer> curveX = new ArrayList<Integer>();
 	private List<Integer> curveY = new ArrayList<Integer>();
 
@@ -30,25 +30,25 @@ public class Animation extends JPanel implements Runnable {
 		g.fillRect(0, 0, getSize().width, getSize().height);
 
 		g.setColor(Color.BLACK);
-		int xPosition = (int) (xx * getWidth()) / 2 + getWidth() / 2 - (int) R;
+		int xPosition = (int) (xx * getWidth()) / 2 + getWidth() / 2 - (int) ovalRadius;
 		int yPosition = (int) (yy * getHeight()) / 2 + getHeight() / 2
-				- (int) R;
+				- (int) ovalRadius;
 
 		// Wojtek
-		g.fillOval(xPosition, yPosition, (int) R * 2, (int) R * 2);
-		curveX.add(xPosition + (int) R);
-		curveY.add(yPosition + (int) R);
+		g.fillOval(xPosition, yPosition, (int) ovalRadius * 2, (int) ovalRadius * 2);
+		curveX.add(xPosition + (int) ovalRadius);
+		curveY.add(yPosition + (int) ovalRadius);
 		int count = curveX.size();
-		for (int j = 4; j < count; ++j) {
-			g.drawLine(curveX.get(j), curveY.get(j), curveX.get(j - 1),
-					curveY.get(j - 1));
+		for (int jj = 4; jj < count; ++jj) {
+			g.drawLine(curveX.get(jj), curveY.get(jj), curveX.get(jj - 1),
+					curveY.get(jj - 1));
 		}
 
 	}
 
 	void ovalMovement() {
-		xx = Math.sin(3 * 2 * Math.PI * i / 1000);
-		yy = Math.sin(4 * 2 * Math.PI * i / 1000);
+		xx = Math.sin(3 * 2 * Math.PI * ii / 1000);
+		yy = Math.sin(4 * 2 * Math.PI * ii / 1000);
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public class Animation extends JPanel implements Runnable {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			i++;
+			ii++;
 			ovalMovement();
 			repaint();
 		}
