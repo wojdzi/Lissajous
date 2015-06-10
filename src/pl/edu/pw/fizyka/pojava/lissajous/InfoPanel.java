@@ -21,10 +21,10 @@ public class InfoPanel extends JPanel {
 	int panelWidth;
 	int panelHeight;
 
-	public InfoPanel(boolean eng) {
+	public InfoPanel(boolean english) {
 
 		try {
-			if (!eng) {
+			if (!english) {
 				packedImage = ImageIO.read(this.getClass().getResourceAsStream(
 						"info.png"));
 			} else {
